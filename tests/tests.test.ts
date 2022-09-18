@@ -197,8 +197,6 @@ describe("Testa GET /tests/teachers", () => {
         //teste
         const result = await supertest(app).get("/tests/teachers").set({ Authorization: `Bearer ${loggedUser.body.token}` }).send();
 
-        console.log(result.body);
-
         expect(result.status).toBe(200);
         expect(result.body).toBeInstanceOf(Array);
     });
