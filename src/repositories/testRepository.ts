@@ -7,6 +7,9 @@ export async function insert(testData: ITestType) {
 
 export async function getTestsByTerms() {
    const result = await prisma.term.findMany({
+      orderBy: {
+         number: "asc",
+      },
       select: {
          number: true,
          disciplines: {
